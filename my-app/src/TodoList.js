@@ -11,15 +11,16 @@ class TodoList extends Component {
             placeholder="请输入"
             type="text"
             value={this.state.keyWords}
-            onChange={this.inputChangedHandler.bind(this)}
+            onChange={this.inputChangedHandler}
           ></input>
-          <button onClick={this.handleSubmit.bind(this)}>提交</button>
+          <button onClick={this.handleSubmit}>提交</button>
         </div>
         <ul>
           {this.state.list.map((item, index) => {
             return (
               <li key={index} className="item">
                 <span dangerouslySetInnerHTML={{ __html: item }}></span>
+                {item}
                 <button onClick={this.handleItemDel.bind(this, index)}>
                   删除
                 </button>
@@ -38,6 +39,8 @@ class TodoList extends Component {
       list: ["<h1>test</h1>"],
       keyWords: "",
     };
+    this.inputChangedHandler = this.inputChangedHandler.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   // 输入关键字
   inputChangedHandler = (event) => {
