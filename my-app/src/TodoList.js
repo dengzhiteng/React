@@ -9,9 +9,9 @@ class TodoList extends Component {
             placeholder="请输入"
             type="text"
             value={this.state.keyWords}
-            onChange={(event) => this.inputChangedHandler(event)}
+            onChange={this.inputChangedHandler.bind(this)}
           ></input>
-          <button> 提交 </button>
+          <button onClick={this.handleSubmit.bind(this)}>提交</button>
         </div>
         <ul>
           {this.state.list.map((item, index) => {
@@ -31,8 +31,15 @@ class TodoList extends Component {
   inputChangedHandler = (event) => {
     this.setState({
       keyWords: event.target.value,
-      list: [event.target.value, ...this.state.list],
     });
   };
+  handleSubmit(event) {
+    const keyWords = this.state.keyWords;
+    if (!keyWords) return;
+    this.setState({
+      keyWords: "",
+      list: [...this.state.list, keyWords],
+    });
+  }
 }
 export default TodoList;
