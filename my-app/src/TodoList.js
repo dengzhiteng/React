@@ -4,14 +4,14 @@ class TodoList extends Component {
     return (
       <Fragment>
         <div>
-          <h3> Todo List </h3>
-          <input
+          {/* <h3> Todo List </h3> */}
+          {/* <input
             placeholder="请输入"
             type="text"
             value={this.state.keyWords}
             onChange={this.inputChangedHandler.bind(this)}
           ></input>
-          <button onClick={this.handleSubmit.bind(this)}>提交</button>
+          <button onClick={this.handleSubmit.bind(this)}>提交</button> */}
         </div>
         <ul>
           {this.state.list.map((item, index) => {
