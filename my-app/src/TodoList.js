@@ -1,22 +1,24 @@
 import React, { Component, Fragment } from "react";
+import "./TodoList.css";
+
 class TodoList extends Component {
   render() {
     return (
-      <Fragment>
+      <div className="box">
         <div>
-          {/* <h3> Todo List </h3> */}
-          {/* <input
+          <h3> Todo List </h3>
+          <input
             placeholder="请输入"
             type="text"
             value={this.state.keyWords}
             onChange={this.inputChangedHandler.bind(this)}
           ></input>
-          <button onClick={this.handleSubmit.bind(this)}>提交</button> */}
+          <button onClick={this.handleSubmit.bind(this)}>提交</button>
         </div>
         <ul>
           {this.state.list.map((item, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="item">
                 {item}
                 <button onClick={this.handleItemDel.bind(this, index)}>
                   删除
@@ -25,7 +27,7 @@ class TodoList extends Component {
             );
           })}
         </ul>
-      </Fragment>
+      </div>
     );
   }
   //   定义构造函数
