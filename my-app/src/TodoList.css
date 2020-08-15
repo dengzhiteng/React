@@ -17,6 +17,11 @@ li.item {
     border-bottom: 1px solid red;
     display: flex;
     justify-content: space-between;
-    line-height: 2;
+    line-height: 30px;
     margin-top: 15px;
+}
+
+li.item button {
+    width: 50px;
+    height: 30px;
 }

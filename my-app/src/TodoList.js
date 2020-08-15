@@ -19,7 +19,7 @@ class TodoList extends Component {
           {this.state.list.map((item, index) => {
             return (
               <li key={index} className="item">
-                {item}
+                <span dangerouslySetInnerHTML={{ __html: item }}></span>
                 <button onClick={this.handleItemDel.bind(this, index)}>
                   删除
                 </button>
@@ -35,7 +35,7 @@ class TodoList extends Component {
     //  接受传值
     super(props);
     this.state = {
-      list: [],
+      list: ["<h1>test</h1>"],
       keyWords: "",
     };
   }
