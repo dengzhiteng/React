@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 class TodoList extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
         <div>
           <h3> Todo List </h3>
           <input
@@ -25,7 +25,7 @@ class TodoList extends Component {
             );
           })}
         </ul>
-      </div>
+      </Fragment>
     );
   }
   //   定义构造函数
