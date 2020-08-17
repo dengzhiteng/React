@@ -14,11 +14,12 @@ ul {
 }
 
 li.item {
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #dcdcdc;
     display: flex;
     justify-content: space-between;
     line-height: 30px;
     margin-top: 15px;
+    padding: 5px 0;
 }
 
 li.item button {
