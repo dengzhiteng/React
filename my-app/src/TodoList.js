@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from "react";
-import "./TodoList.css";
+import React, { Component } from "react";
+import "./style/TodoList.css";
+import TodoItem from "./TodoItem.js";
 
 class TodoList extends Component {
   render() {
@@ -18,13 +19,12 @@ class TodoList extends Component {
         <ul>
           {this.state.list.map((item, index) => {
             return (
-              <li key={index} className="item">
-                <span dangerouslySetInnerHTML={{ __html: item }}></span>
-                {item}
-                <button onClick={this.handleItemDel.bind(this, index)}>
-                  删除
-                </button>
-              </li>
+              <TodoItem
+                content={item}
+                index={index}
+                key={index}
+                handleItemDel={this.handleItemDel.bind(this)}
+              ></TodoItem>
             );
           })}
         </ul>
@@ -36,7 +36,7 @@ class TodoList extends Component {
     //  接受传值
     super(props);
     this.state = {
-      list: ["<h1>test</h1>"],
+      list: ["test1", "test2", "test3"],
       keyWords: "",
     };
     this.inputChangedHandler = this.inputChangedHandler.bind(this);
@@ -49,7 +49,7 @@ class TodoList extends Component {
     });
   };
   // 提交
-  handleSubmit(event) {
+  handleSubmit() {
     const keyWords = this.state.keyWords;
     if (!keyWords) return;
     this.setState({
@@ -58,7 +58,7 @@ class TodoList extends Component {
     });
   }
   //   删除 li
-  handleItemDel(index, event) {
+  handleItemDel(index) {
     const listCopy = [...this.state.list];
     listCopy.splice(index, 1);
     this.setState({
