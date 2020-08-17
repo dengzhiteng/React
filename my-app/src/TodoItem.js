@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { CSSTransition } from "react-transition-group";
+
 export class TodoItem extends Component {
   constructor(props) {
     super(props);
@@ -14,12 +16,18 @@ export class TodoItem extends Component {
         <span dangerouslySetInnerHTML={{ __html: this.props.content }}></span>
         <div className="flex">
           <button onClick={this.handleToggle}>toggle</button>
-          <button
-            onClick={this.delItem}
-            className={this.state.show ? "show" : "hide"}
+          <CSSTransition
+            in={this.state.show}
+            timeout={1000}
+            classNames="fade"
+            unmountOnExit
+            onEntered={(el) => {
+              el.style.color = "blue";
+            }}
+            appear={true}
           >
-            删除
-          </button>
+            <button onClick={this.delItem}>删除</button>
+          </CSSTransition>
         </div>
       </div>
     );
