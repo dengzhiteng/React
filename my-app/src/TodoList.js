@@ -23,6 +23,7 @@ class TodoList extends Component {
                 content={item}
                 index={index}
                 key={index}
+                // 必须要绑定this ,否则子组件调用不了这个方法
                 handleItemDel={this.handleItemDel.bind(this)}
               ></TodoItem>
             );

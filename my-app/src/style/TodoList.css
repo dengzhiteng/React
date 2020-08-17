@@ -9,6 +9,19 @@
     margin: 0 auto;
 }
 
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
 ul {
     list-style: none;
 }
@@ -19,9 +32,14 @@ ul {
     justify-content: space-between;
     line-height: 30px;
     margin-top: 15px;
+    padding-bottom: 5px;
 }
 
 .item button {
     width: 50px;
     height: 30px;
+}
+
+.item button+button {
+    margin-left: 10px;
 }
