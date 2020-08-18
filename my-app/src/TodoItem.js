@@ -5,12 +5,10 @@ export class TodoItem extends Component {
             <div>
                 <li className="item">
                     <span dangerouslySetInnerHTML={{ __html: this.props.content }}></span>
-                    <button >
-                        删除
-                </button>
+                    <button onClick={this.props.handleItemDel(this.props.index)}>删除</button>
                 </li>
             </div>
         )
-    }
+    };
 }
 export default TodoItem

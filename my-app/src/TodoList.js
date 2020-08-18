@@ -18,7 +18,7 @@ class TodoList extends Component {
         </div>
         <ul>
           {this.state.list.map((item, index) => {
-            return <TodoItem content={item} key={index} />
+            return <TodoItem content={item} index={index} key={index} handleItemDel={this.handleItemDel()} />
           })}
         </ul>
       </div>
@@ -29,7 +29,7 @@ class TodoList extends Component {
     //  接受传值
     super(props);
     this.state = {
-      list: ["<h1>test</h1>"],
+      list: [],
       keyWords: "",
     };
   }
@@ -49,7 +49,7 @@ class TodoList extends Component {
     });
   }
   //   删除 li
-  handleItemDel(index, event) {
+  handleItemDel(index) {
     const listCopy = [...this.state.list];
     listCopy.splice(index, 1);
     this.setState({
