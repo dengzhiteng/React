@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import TodoItem from "./TodoItem.js";
 import "./style/TodoList.css";
+import TodoItem from "./TodoItem.js";
 
 class TodoList extends Component {
   render() {
@@ -12,13 +12,21 @@ class TodoList extends Component {
             placeholder="请输入"
             type="text"
             value={this.state.keyWords}
-            onChange={this.inputChangedHandler.bind(this)}
+            onChange={this.inputChangedHandler}
           ></input>
-          <button onClick={this.handleSubmit.bind(this)}>提交</button>
+          <button onClick={this.handleSubmit}>提交</button>
         </div>
         <ul>
           {this.state.list.map((item, index) => {
-            return <TodoItem content={item} index={index} key={index} handleItemDel={this.handleItemDel()} />
+            return (
+              <TodoItem
+                content={item}
+                index={index}
+                key={index}
+                // 必须要绑定this ,否则子组件调用不了这个方法
+                handleItemDel={this.handleItemDel.bind(this)}
+              ></TodoItem>
+            );
           })}
         </ul>
       </div>
@@ -29,9 +37,11 @@ class TodoList extends Component {
     //  接受传值
     super(props);
     this.state = {
-      list: [],
+      list: ["test1", "test2", "test3"],
       keyWords: "",
     };
+    this.inputChangedHandler = this.inputChangedHandler.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   // 输入关键字
   inputChangedHandler = (event) => {
@@ -40,7 +50,7 @@ class TodoList extends Component {
     });
   };
   // 提交
-  handleSubmit(event) {
+  handleSubmit() {
     const keyWords = this.state.keyWords;
     if (!keyWords) return;
     this.setState({
