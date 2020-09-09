@@ -1,21 +1,27 @@
 import React, { Component } from "react";
 import "./style/TodoList.css";
 import TodoItem from "./TodoItem.js";
+import { Input } from 'antd';
+import { AudioOutlined } from '@ant-design/icons';
+const { Search } = Input;
+const suffix = (
+  <AudioOutlined
+    style={{
+      fontSize: 16,
+      color: '#1890ff',
+    }}
+  />
+);
 
 class TodoList extends Component {
   render() {
     return (
       <div className="box">
-        <div>
-          <h3> Todo List </h3>
-          <input
-            placeholder="请输入"
-            type="text"
-            value={this.state.keyWords}
-            onChange={this.inputChangedHandler}
-          ></input>
-          <button onClick={this.handleSubmit}>提交</button>
-        </div>
+        <Search
+          placeholder="input search text"
+          onSearch={value => console.log(value)}
+          style={{ width: 200 }}
+        />
         <ul>
           {this.state.list.map((item, index) => {
             return (

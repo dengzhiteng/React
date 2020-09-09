@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +21,6 @@ ul {
 }
 
 .item {
-  border-bottom: 1px solid red;
   display: flex;
   justify-content: space-between;
   line-height: 30px;
@@ -27,11 +28,6 @@ ul {
   padding-bottom: 5px;
 }
 
-.item button {
-  width: 50px;
-  height: 30px;
-}
-
-.item button + button {
+.item button+button {
   margin-left: 10px;
 }
