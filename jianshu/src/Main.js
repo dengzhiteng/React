@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './css/Main.scss'
+import './static/css/Main.scss'
 class Main extends Component {
     render() {
         return (
             <div className="main" >
-                Main
             </div>
         );
     }

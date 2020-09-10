@@ -1,0 +1,15 @@
+.width-limit {
+    min-width: 768px;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.container {
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+}

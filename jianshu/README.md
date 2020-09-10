@@ -12,7 +12,12 @@ cnpm install node-sass sass-loader --save
 ```
 @import '~antd/dist/antd.css';
 ```
-3. 
+
+### 使用axios 
+
+
+### react 中标签不提示闭合
+- https://blog.csdn.net/shaleilei/article/details/82984228
 
 
 

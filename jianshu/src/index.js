@@ -5,7 +5,8 @@ import Main from './Main.js'
 import Header from './Header.js'
 import Footer from './Footer.js'
 
-import './css/App.css';
+import './static/css/App.css';
+import './static/css/common.scss';
 const style = {
     display: 'flex',
     flexDirection: 'column',
