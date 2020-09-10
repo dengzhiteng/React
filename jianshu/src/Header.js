@@ -8,7 +8,6 @@ class Header extends Component {
     render() {
         return (
             <div className="Header">
-                <p className="p1">p1</p>
                 <p className="p2">p2</p>
             </div>
         );

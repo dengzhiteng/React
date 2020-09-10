@@ -6,8 +6,13 @@ import Header from './Header.js'
 import Footer from './Footer.js'
 
 import './css/App.css';
+const style = {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%'
+}
 ReactDom.render(
-    <div>
+    <div className="home" style={style}>
         <Header />
         <Main />
         <Footer />
